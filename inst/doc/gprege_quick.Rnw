@@ -63,12 +63,7 @@ For convenience, a fragment of the preproccessed data is provided in this packag
   data(FragmentDellaGattaData)
 @
 The full dataset is available at
-<<<<<<< .mine
 \url{http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData}
-=======
-%\url{http://staffwww.dcs.shef.ac.uk/people/A.Kalaitzis/DellaGattaData.RData}
-\url{http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData}
->>>>>>> .r81043
 and can be loaded using
 <<eval=FALSE>>=
   # Download full Della Gatta dataset.
@@ -82,13 +77,8 @@ we highly recommend processing it with \Rfunction{rma} or \Rfunction{mmgmos} fro
 Let us now examine one by one, in an interactive fashion, a few profiles of the full dataset (not available in the package). We start by downloading it.
 <<>>=
   # Download full Della Gatta dataset.
-<<<<<<< .mine
   con <- url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
   while(!exists('DGdata')) try(load(con),TRUE) #  close.connection(con)
-=======
-  con <- url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
-  load(con)#  close.connection(con)
->>>>>>> .r81043
   # Timepoints / GP inputs.
   tTrue = matrix(seq(0,240,by=20), ncol=1)
   gpregeOptions <- list()
@@ -201,13 +191,8 @@ Total computation time is approximately 45 minutes on a desktop running Ubuntu
 10.04 with a dual-core CPU at 2.8 GHz and 3.2 GiB of memory.
 <<eval=FALSE>>=
   # Download full Della Gatta dataset.
-<<<<<<< .mine
   #con <- url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
   #while(!exists('DGdata')) try(load(con),TRUE); close.connection(con)
-=======
-  con <- url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
-  load(con); close.connection(con)
->>>>>>> .r81043
   # Timepoints / GP inputs.
   tTrue = matrix(seq(0,240,by=20), ncol=1)
   gpregeOptions <- list()
