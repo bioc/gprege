@@ -64,11 +64,11 @@ For convenience, a fragment of the preproccessed data is provided in this packag
 @
 The full dataset is available at
 %\url{http://staffwww.dcs.shef.ac.uk/people/A.Kalaitzis/DellaGattaData.RData}
-\url{https://gprege.googlecode.com/svn/trunk/DellaGattaData.RData}
+\url{http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData}
 and can be loaded using
 <<eval=FALSE>>=
   # Download full Della Gatta dataset.
-  load(url('https://gprege.googlecode.com/svn/trunk/DellaGattaData.RData'))
+  load(url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData'))
 @
 Type \Rfunction{?DellaGattaData} for more details on the dataset.
 If you need to preprocess some gene expression time-series from scratch and the dataset originates from Affymetrix arrays,
@@ -78,7 +78,7 @@ we highly recommend processing it with \Rfunction{rma} or \Rfunction{mmgmos} fro
 Let us now examine one by one, in an interactive fashion, a few profiles of the full dataset (not available in the package). We start by downloading it.
 <<>>=
   # Download full Della Gatta dataset.
-  con <- url('https://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
+  con <- url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
   load(con)#  close.connection(con)
   # Timepoints / GP inputs.
   tTrue = matrix(seq(0,240,by=20), ncol=1)
@@ -193,7 +193,7 @@ Total computation time is approximately 45 minutes on a desktop running Ubuntu
 10.04 with a dual-core CPU at 2.8 GHz and 3.2 GiB of memory.
 <<eval=FALSE>>=
   # Download full Della Gatta dataset.
-  con <- url('https://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
+  con <- url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
   load(con); close.connection(con)
   # Timepoints / GP inputs.
   tTrue = matrix(seq(0,240,by=20), ncol=1)
