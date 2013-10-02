@@ -22,7 +22,7 @@
 \author{
   Alfredo A. Kalaitzis
 
-  Maintainer: Alfredo A. Kalaitzis <alkalait@gmail.com>
+  Maintainer: Alfredo A. Kalaitzis <a.kalaitzis@ucl.ac.uk>
 }
 \references{
   A.~A.~Kalaitzis and N.~D.~Lawrence.
