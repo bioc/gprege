@@ -4,9 +4,9 @@ Date: 2012-02-27
 Title: Gaussian Process Ranking and Estimation of Gene Expression
         time-series
 Authors@R: c(person(c("Alfredo"), "Kalaitzis", role =
-        c("aut","cre","trl"), email = "alkalait@gmail.com"))
-Author: Alfredo Kalaitzis <alkalait@gmail.com>
-Maintainer: Alfredo Kalaitzis <alkalait@gmail.com>
+        c("aut","cre","trl"), email = "a.kalaitzis@ucl.ac.uk"))
+Author: Alfredo Kalaitzis <a.kalaitzis@ucl.ac.uk>
+Maintainer: Alfredo Kalaitzis <a.kalaitzis@ucl.ac.uk>
 Depends: R (>= 2.8.0), gptk
 Suggests: spam
 Description: The gprege package implements the methodology described in
@@ -26,5 +26,5 @@ License: AGPL-3
 biocViews: Microarray, Preprocessing, Bioinformatics,
         DifferentialExpression, TimeCourse
 URL:
-BugReports: alkalait@gmail.com
+BugReports: a.kalaitzis@ucl.ac.uk
 Packaged: 2012-02-27 20:12:19 UTC; alkalait
