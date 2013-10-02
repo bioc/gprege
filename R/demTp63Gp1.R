@@ -35,8 +35,9 @@ if (fulldataset) {
 ## Download BATS rankings (Angelini, 2007)
 ## Case 1: Delta error prior, case 2: Inverse Gamma error prior, case 3: Double Exponential error prior
 BATSranking = matrix(0, length(DGatta_labels_byTSNItop100), 3)
-for (i in 1:3) { 
-  tmp <- read.table(url(paste('http://arxiv.org/src/1106.4333v1/anc/DGdat_p63_case',i,'_GL.txt',sep='')), skip=1) ## Read the gene numbers
+for (i in 1:3) {
+  tmp=NULL
+  while(is.null(tmp)) try(tmp <- read.table(url(paste('http://gprege.googlecode.com/svn/trunk/DGdat_p63_case',i,'_GL.txt',sep='')), skip=1), TRUE) ## Read the gene numbers
   genenumbers <- as.numeric(lapply( as.character(tmp[,2]), function(x) x=substr(x,2,nchar(x))))
   BATSranking[,i] <- tmp[sort(genenumbers, index.return=TRUE)$ix, 4] ## Sort rankings by gene numbers.
 }
@@ -69,3 +70,4 @@ gpregeOutput <- gprege(data=exprs_tp63_RMA, inputs=tTrue, gpregeOptions=gpregeOp
 compareROC(output=precalculated_rankingScores, groundTruthLabels=DGatta_labels_byTSNItop100, compareToRanking=BATSranking)
 
 }
+
