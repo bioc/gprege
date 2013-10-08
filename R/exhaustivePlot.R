@@ -1,5 +1,4 @@
-exhaustivePlot <-
-function(y, x, xstar, options, maxwidth, res, nlevels) {
+exhaustivePlot <- function(y, x, xstar, options, maxwidth, res, nlevels) {
 
 ## EXHAUSTIVEPLOT Plot of the LML function by exhaustive search.
 ## FORMAT 
@@ -63,7 +62,7 @@ if (y_sd == 0) {
   ## NOTE: filled.contour maps the transpose of the matrix to the image, hence the t(C).
   filled.contour(x=width, y=log10(signal/(y_sd-signal)), z=t(C),
   # filled.contour(x=width, y=(signal/(sd(y)-signal)), z=C,
-    color=gray.colors, #terrain.colors,
+    color.palette=gray.colors, #terrain.colors,
       xlab='Lengthscale', ylab=bquote(paste(log[10]~SNR)),
   #   levels = v,
     nlevels = nlevels,
