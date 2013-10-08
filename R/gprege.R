@@ -1,5 +1,4 @@
-gprege <-
-function(data, inputs, gpregeOptions) {
+gprege <- function(data, inputs, gpregeOptions) {
 
 ## GPREGE Gaussian process ranking and estimation of gene expression time-series.
 ## FORMAT
@@ -161,7 +160,7 @@ for (ix in 1:n) {
   if (gpregeOptions$explore) {
 #     dev.set(2)
     pdf(file=paste('gpPlot',ix,'.pdf',sep=''), paper="special", width=6, height=4*npsets)  
-    close.screen(all=TRUE)
+    close.screen(all.screens=TRUE)
     split.screen(c(dim(inithypers)[2],1)) ## Reset any existing sub-figures setup.
     #nf = layout(matrix(c(1:dim(inithypers)[2]), 1:dim(inithypers)[2], 1)); layout.show(nf)
   }
