@@ -1,5 +1,5 @@
 Package: gprege
-Version: 1.7.0
+Version: 1.7.1
 Date: 2013-10-08
 Title: Gaussian Process Ranking and Estimation of Gene Expression time-series
 Authors@R: c(person(c("Alfredo"), "Kalaitzis", role =
