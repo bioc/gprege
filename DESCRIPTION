@@ -24,6 +24,5 @@ Description: The gprege package implements the methodology described in
 License: AGPL-3
 biocViews: Microarray, Preprocessing, Bioinformatics,
         DifferentialExpression, TimeCourse
-URL:
 BugReports: alkalait@gmail.com
 Packaged: 2013-10-08 22:00:00 UTC; alkalait
