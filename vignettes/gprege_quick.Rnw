@@ -55,7 +55,7 @@ Otherwise, to manually install the gprege software, unpack the software and run
 To load the package start R and run
 <<>>=
   library(gprege)
-@ 
+@
 
 \subsection{Loading the data}
 For convenience, a fragment of the preproccessed data is provided in this package and can be loaded using
@@ -75,7 +75,7 @@ we highly recommend processing it with \Rfunction{rma} or \Rfunction{mmgmos} fro
 
 \subsection{Interactive mode}
 Let us now examine one by one, in an interactive fashion, a few profiles of the full dataset (not available in the package). We start by downloading it.
-<<>>=
+<<eval=FALSE>>=
   # Download full Della Gatta dataset.
   con <- url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
   while(!exists('DGdata')) try(load(con),TRUE) #  close.connection(con)
@@ -107,7 +107,7 @@ The option \Rfunction{gpregeOptions\$explore<-TRUE} makes \Rfunction{gprege} wai
   # Exhaustive plot maximum lengthscale.
   gpregeOptions$exhaustPlotMaxWidth <- 100
   # Noisy ground truth labels: which genes are in the top 786 ranks of the TSNI ranking.
-  gpregeOptions$labels <- DGatta_labels_byTSNItop100 
+  gpregeOptions$labels <- DGatta_labels_byTSNItop100
   # SCG optimisation: maximum number of iterations.
   gpregeOptions$iters <- 100
   # SCG optimisation: no messages.
@@ -134,7 +134,7 @@ The option \Rfunction{gpregeOptions\$explore<-TRUE} makes \Rfunction{gprege} wai
     cat("\\caption{GP fit with different initialisations on profile \\#", gpregeOptions$indexRange[i], ".}", sep="")
     cat("\\label{fig:gpPlot", i, "}", sep = "")
     cat("\\end{figure}")
-    
+
     cat("\\begin{figure}[H]")
     cat("\\centering")
     cat("\\subfigure[]{")
@@ -205,7 +205,7 @@ Total computation time is approximately 45 minutes on a desktop running Ubuntu
   # Exhaustive plot maximum lengthscale.
   gpregeOptions$exhaustPlotMaxWidth <- 100
   # Noisy ground truth labels: which genes are in the top 786 ranks of the TSNI ranking.
-  gpregeOptions$labels <- DGatta_labels_byTSNItop100 
+  gpregeOptions$labels <- DGatta_labels_byTSNItop100
   # SCG optimisation: maximum number of iterations.
   gpregeOptions$iters <- 100
   # SCG optimisation: no messages.
