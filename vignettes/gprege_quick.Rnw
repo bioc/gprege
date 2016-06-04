@@ -75,7 +75,7 @@ we highly recommend processing it with \Rfunction{rma} or \Rfunction{mmgmos} fro
 
 \subsection{Interactive mode}
 Let us now examine one by one, in an interactive fashion, a few profiles of the full dataset (not available in the package). We start by downloading it.
-<<>>=
+<<eval=FALSE>>=
   # Download full Della Gatta dataset.
   con <- url('http://gprege.googlecode.com/svn/trunk/DellaGattaData.RData')
   while(!exists('DGdata')) try(load(con),TRUE) #  close.connection(con)
