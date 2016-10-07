@@ -1,6 +1,6 @@
 Package: gprege
-Version: 1.17.0
-Date: 2013-10-08
+Version: 1.17.1
+Date: 2016-10-07
 Title: Gaussian Process Ranking and Estimation of Gene Expression
         time-series
 Authors@R: c(person(c("Alfredo"), "Kalaitzis", role =
@@ -27,6 +27,6 @@ Description: The gprege package implements the methodology described in
         (http://www.biomedcentral.com/1471-2105/12/180).
 License: AGPL-3
 BugReports: alkalait@gmail.com
-Packaged: 2013-10-08 22:00:00 UTC; alkalait
+Packaged: 2016-10-07 13:00:00 UTC; alkalait
 biocViews: Microarray, Preprocessing, DifferentialExpression,
         TimeCourse

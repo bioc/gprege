@@ -23,7 +23,7 @@ rm(DGatta_labels_byTSNI, DGatta_labels_byTSNItop100, exprs_tp63_RMA)
 gpregeOptions <- list()
 
 if (fulldataset) {
-  con <- url('http://staffwww.dcs.shef.ac.uk/people/A.Kalaitzis/DellaGattaData.RData')
+  con <- url('http://github.com/alkalait/gprege-datasets/raw/master/R/DellaGattaData.RData')
   load(con, envir=environment())   ## Download full Della Gatta dataset (in this function's invironment).
   close.connection(con)
   gpregeOptions$indexRange <- which(DGatta_labels_byTSNItop100)[1:2]
@@ -37,7 +37,7 @@ if (fulldataset) {
 BATSranking = matrix(0, length(DGatta_labels_byTSNItop100), 3)
 for (i in 1:3) {
   tmp=NULL
-  while(is.null(tmp)) try(tmp <- read.table(url(paste('http://gprege.googlecode.com/svn/trunk/DGdat_p63_case',i,'_GL.txt',sep='')), skip=1), TRUE) ## Read the gene numbers
+  while(is.null(tmp)) try(tmp <- read.table(url(paste('http://github.com/alkalait/gprege-datasets/raw/master/R/DGdat_p63_case',i,'_GL.txt',sep='')), skip=1), TRUE) ## Read the gene numbers
   genenumbers <- as.numeric(lapply( as.character(tmp[,2]), function(x) x=substr(x,2,nchar(x))))
   BATSranking[,i] <- tmp[sort(genenumbers, index.return=TRUE)$ix, 4] ## Sort rankings by gene numbers.
 }
@@ -70,4 +70,3 @@ gpregeOutput <- gprege(data=exprs_tp63_RMA, inputs=tTrue, gpregeOptions=gpregeOp
 compareROC(output=precalculated_rankingScores, groundTruthLabels=DGatta_labels_byTSNItop100, compareToRanking=BATSranking)
 
 }
-
