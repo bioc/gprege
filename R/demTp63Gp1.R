@@ -11,7 +11,7 @@ function(fulldataset=FALSE) {
 ##
 ## USAGE: demTp63Gp1(fulldataset=FALSE)
 ##
-## COPYRIGHT: Alfredo A. Kalaitzis, 2011
+## COPYRIGHT: Alfredo Kalaitzis, 2011
 ##
 ## SEEALSO : gprege
 ##
@@ -23,24 +23,34 @@ rm(DGatta_labels_byTSNI, DGatta_labels_byTSNItop100, exprs_tp63_RMA)
 gpregeOptions <- list()
 
 if (fulldataset) {
-  con <- url('http://github.com/alkalait/gprege-datasets/raw/master/R/DellaGattaData.RData')
-  load(con, envir=environment())   ## Download full Della Gatta dataset (in this function's invironment).
-  close.connection(con)
+##  con <- url('https://github.com/alkalait/gprege-datasets/raw/master/R/DellaGattaData.RData')
+##  load(con, envir=environment())   ## Download full Della Gatta dataset (in this function's invironment).
+##  close.connection(con)
+  data(FullDellaGattaData)
   gpregeOptions$indexRange <- which(DGatta_labels_byTSNItop100)[1:2]
 } else {
   data(FragmentDellaGattaData, envir=environment()) ## Load demo data.
   gpregeOptions$indexRange <- c(1:2)
 }
 
-## Download BATS rankings (Angelini, 2007)
+## Load BATS rankings (Angelini, 2007)
 ## Case 1: Delta error prior, case 2: Inverse Gamma error prior, case 3: Double Exponential error prior
+data(DGdat_p63)
 BATSranking = matrix(0, length(DGatta_labels_byTSNItop100), 3)
-for (i in 1:3) {
-  tmp=NULL
-  while(is.null(tmp)) try(tmp <- read.table(url(paste('http://github.com/alkalait/gprege-datasets/raw/master/R/DGdat_p63_case',i,'_GL.txt',sep='')), skip=1), TRUE) ## Read the gene numbers
-  genenumbers <- as.numeric(lapply( as.character(tmp[,2]), function(x) x=substr(x,2,nchar(x))))
-  BATSranking[,i] <- tmp[sort(genenumbers, index.return=TRUE)$ix, 4] ## Sort rankings by gene numbers.
-}
+##for (i in 1:3) {
+##  tmp=NULL
+##  while(is.null(tmp)) try(tmp <- read.table(url(paste('https://github.com/alkalait/gprege-datasets/raw/master/R/DGdat_p63_case',i,'_GL.txt',sep='')), skip=1), TRUE) ## Read the gene numbers
+##  genenumbers <- as.numeric(lapply( as.character(tmp[,2]), function(x) x=substr(x,2,nchar(x))))
+##  BATSranking[,i] <- tmp[sort(genenumbers, index.return=TRUE)$ix, 4] ## Sort rankings by gene numbers.
+##}
+genenumbers <- as.numeric(lapply(as.character(DGdat_p63_case1_GL[,2]), function(x) x=substr(x,2,nchar(x))))
+BATSranking[,1] <- DGdat_p63_case1_GL[sort(genenumbers, index.return=TRUE)$ix, 4]
+
+genenumbers <- as.numeric(lapply(as.character(DGdat_p63_case2_GL[,2]), function(x) x=substr(x,2,nchar(x))))
+BATSranking[,2] <- DGdat_p63_case2_GL[sort(genenumbers, index.return=TRUE)$ix, 4]
+
+genenumbers <- as.numeric(lapply(as.character(DGdat_p63_case3_GL[,2]), function(x) x=substr(x,2,nchar(x))))
+BATSranking[,3] <- DGdat_p63_case3_GL[sort(genenumbers, index.return=TRUE)$ix, 4]
 ## The smaller the BATS ranking metric is, the better the rank that the gene reporter gets.
 BATSranking = 1/BATSranking ## Invert those ranking metrics to compare on a common ground.
 

@@ -20,9 +20,9 @@
   For details of using the package please refer to the Vignette.
 }
 \author{
-  Alfredo A. Kalaitzis
+  Alfredo Kalaitzis
 
-  Maintainer: Alfredo A. Kalaitzis <a.kalaitzis@ucl.ac.uk>
+  Maintainer: Alfredo Kalaitzis <alkalait@gmail.com>
 }
 \references{
   A.~A.~Kalaitzis and N.~D.~Lawrence.

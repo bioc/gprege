@@ -1,4 +1,5 @@
-exhaustivePlot <- function(y, x, xstar, options, maxwidth, res, nlevels) {
+exhaustivePlot <-
+function(y, x, xstar, options, maxwidth, res, nlevels) {
 
 ## EXHAUSTIVEPLOT Plot of the LML function by exhaustive search.
 ## FORMAT 
@@ -19,7 +20,7 @@ exhaustivePlot <- function(y, x, xstar, options, maxwidth, res, nlevels) {
 ## 
 ## SEEALSO : gpCreate, gpExpandParam, gpLogLikelihood, gpPosteriorMeanVar
 ## 
-## COPYRIGHT : Alfredo A. Kalaitzis, 2010, 2011
+## COPYRIGHT : Alfredo Kalaitzis, 2010, 2011
 ## 
 ## GPREGE
   
