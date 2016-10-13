@@ -91,12 +91,13 @@ Let us now examine one by one, in an interactive fashion, a few profiles of the 
   gpregeOptions <- list()
 @
 These gene expression profiles correspond to the top ranks as direct targets suggested by TSNI \citep{della2008direct}.
-<<>>=
+<<eval=FALSE>>=
+  data(FullDellaGattaData)
   # Set index range so that only a top few targets suggested by TSNI be explored.
   gpregeOptions$indexRange <- which(DGatta_labels_byTSNItop100)[1:2]
 @
 If the download fails, use the following instead.
-<<eval=FALSE>>=
+<<>>=
   # Load installed fragment-dataset.
   data(FragmentDellaGattaData)
   # Fragment dataset is comprised of top-ranked targets suggested by TSNI.
