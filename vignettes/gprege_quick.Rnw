@@ -45,8 +45,9 @@ website. Installing in this way should ensure that all appropriate
 dependencies are met.
 
 << eval=FALSE >>==
-  source("http://www.bioconductor.org/biocLite.R")
-  biocLite("gprege")
+  if (!requireNamespace("BiocManager", quietly=TRUE))
+      install.packages("BiocManager")
+  BiocManager::install("gprege")
 @
 Otherwise, to manually install the gprege software, unpack the software and run
 \begin{verbatim}
