@@ -40,8 +40,8 @@ In this section we introduce the main functions of the \Rpackage{gprege} package
 \subsection{Installing the \gprege{} package}
 
 The recommended way to install \gprege{} is to use the
-\Rfunction{biocLite} function available from the bioconductor
-website. Installing in this way should ensure that all appropriate
+\Rfunction{BiocManager::install} function available from Bioconductor.
+Installing in this way should ensure that all appropriate
 dependencies are met.
 
 << eval=FALSE >>==
