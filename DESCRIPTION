@@ -1,5 +1,5 @@
 Package: gprege
-Version: 1.39.0
+Version: 1.39.1
 Date: 2016-10-07
 Title: Gaussian Process Ranking and Estimation of Gene Expression time-series
 Authors@R: c(person(c("Alfredo"), "Kalaitzis", role =
@@ -27,3 +27,4 @@ biocViews: Microarray, Preprocessing, Bioinformatics,
 URL:
 BugReports: alkalait@gmail.com
 Packaged: 2016-10-07 00:00:00 UTC; alkalait
+PackageStatus: Deprecated
